@@ -72,4 +72,6 @@ cleanFile = ->
   text = text.slice(0, stripOut)
   file.write text
 
-module.exports = gitCommit
+module.exports =
+  do: gitCommit
+  name: 'Commit'

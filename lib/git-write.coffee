@@ -15,4 +15,11 @@ gitWrite = (all=false)->
       new StatusView(type: 'alert', message: data.toString())
   })
 
-module.exports = gitWrite
+gitWriteAll = -> gitWrite(true)
+
+module.exports =
+  do: gitWrite
+  name: 'Write'
+  writeAll:
+    name: 'Write all'
+    do: gitWriteAll
