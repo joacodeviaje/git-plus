@@ -4,13 +4,16 @@ GitWriteAll = GitWrite.writeAll
 GitCommit = require './git-commit'
 
 module.exports =
-class BranchView extends SelectListView
+class CommandView extends SelectListView
   initialize: ->
     super
     @addClass('overlay from-bottom')
     atom.workspaceView.append this
     @setItems([GitWrite, GitCommit, GitWriteAll])
     @focusFilterEditor()
+
+  attach: ->
+    atom.workspaceView.append this
 
   getFilterKey: -> 'name'
 
