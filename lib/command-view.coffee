@@ -12,9 +12,6 @@ class CommandView extends SelectListView
     @setItems([GitWrite, GitCommit, GitWriteAll])
     @focusFilterEditor()
 
-  attach: ->
-    atom.workspaceView.append this
-
   getFilterKey: -> 'name'
 
   viewForItem: ({name}) ->
